@@ -27,35 +27,13 @@ function App({ Component, pageProps }: AppProps) {
 }
 export default App
 
-// Add Custom Chain
-const gnosisChain: Chain = {
-  id: 100,
-  name: 'Gnosis',
-  network: 'gnosis',
-  iconUrl: 'https://gnosis.io/wp-content/themes/lessrain/images/favicon/apple-touch-icon.png',
-  iconBackground: '#000',
-  nativeCurrency: {
-    decimals: 18,
-    name: 'xDai',
-    symbol: 'XDAI',
-  },
-  rpcUrls: {
-    default: 'https://gnosischain-rpc.gateway.pokt.network',
-  },
-  blockExplorers: {
-    default: { name: 'BlockScout', url: 'https://blockscout.com/xdai/mainnet' },
-  },
-  testnet: false,
-}
-
 // Web3 Configs
 const { chains, provider } = configureChains(
-  [chain.mainnet, chain.polygon, chain.optimism, chain.arbitrum, gnosisChain],
+  [chain.mainnet],
   [
     infuraProvider({ infuraId: process.env.NEXT_PUBLIC_INFURA_ID !== '' && process.env.NEXT_PUBLIC_INFURA_ID }),
     jsonRpcProvider({
       rpc: chain => {
-        if (chain.id !== gnosisChain.id) return null
         return { http: chain.rpcUrls.default }
       },
     }),
