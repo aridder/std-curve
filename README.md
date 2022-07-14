@@ -1,10 +1,15 @@
-# dApp Starter Boilerplate
+# StakeDAO mini locker
 
-A dApp starter kit template to quick start a dapp project with Next.js + Tailwind CSS + Ethers + wagmi + RainbowKit.
+## Features
 
-Other tools/components included: Headless UI, Heroicons, Autoprefixer, Sass, PostCSS, ESLint, Prettier.
+See balances for:
 
-Live preview for this repo: https://dapp-starter.aris.ac
+- crv 0xd533a949740bb3306d119cc777fa900ba034cd52
+- sdCRV 0xD1b5651E55D4CeeD36251c61c50C889B36F6abB5
+- sdCRV-Gauge 0x7f50786A0b15723D741727882ee99a0BF34e3466
+
+Swap crv for sdCRV
+Stake sdCRV and receive sdCRV Gauge
 
 ## Getting Started
 
@@ -17,6 +22,8 @@ yarn dev
 ```
 
 ### ENV
+
+Set Infura project ID
 
 ```bash
 # Copy ENV File
