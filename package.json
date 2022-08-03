@@ -8,7 +8,8 @@
     "start": "next start",
     "lint": "next lint",
     "fc": "npx prettier --check ./src",
-    "ff": "npx prettier --write ./src"
+    "ff": "npx prettier --write ./src",
+    "generate:types": "typechain --target ethers-v5 --out-dir src/contracts/typechain 'src/contracts/*.json'"
   },
   "dependencies": {
     "@headlessui/react": "^1.6.5",
@@ -30,12 +31,14 @@
     "wagmi": "^0.5.9"
   },
   "devDependencies": {
+    "@typechain/ethers-v5": "^10.1.0",
     "@types/node": "^18.0.3",
     "@types/react": "18.0.11",
     "eslint": "8.17.0",
     "eslint-config-next": "12.1.6",
     "prettier": "2.6.2",
     "prettier-plugin-tailwindcss": "^0.1.11",
+    "typechain": "^8.1.0",
     "typescript": "4.7.3"
   }
 }
