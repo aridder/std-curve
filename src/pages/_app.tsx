@@ -13,13 +13,15 @@ import { jsonRpcProvider } from 'wagmi/providers/jsonRpc'
 import { useTheme } from 'next-themes'
 import { app } from 'appConfig'
 import { useState, useEffect } from 'react'
+import { Header } from 'components/Header'
 
 function App({ Component, pageProps }: AppProps) {
   const router = useRouter()
   return (
-    <ThemeProvider defaultTheme="system" attribute="class">
+    <ThemeProvider defaultTheme="dark" attribute="class">
       <HeadGlobal />
       <Web3Wrapper>
+        <Header />
         <Component key={router.asPath} {...pageProps} />
       </Web3Wrapper>
     </ThemeProvider>

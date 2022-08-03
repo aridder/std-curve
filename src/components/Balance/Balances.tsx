@@ -1,16 +1,12 @@
 import { Balance } from 'components/Balance/Balance'
-import { useAccount, useBalance, useNetwork, useSwitchNetwork } from 'wagmi'
 import { abi as crvAbi, address as crvAddress } from 'contracts/crv'
 import { abi as sdcrvAbi, address as sdcrvAddress } from 'contracts/sdcrv'
 import { abi as sdcrvgaugeAbi, address as sdcrvgaugeAddress } from 'contracts/sdcrv-gauge'
+import { useAccount, useBalance, useNetwork } from 'wagmi'
 import { BalanceEthers } from './BalanceEthers'
 
 export function Balances() {
-  const { address, isConnected, connector } = useAccount()
-  const { chain, chains } = useNetwork()
-  const { data: balance } = useBalance({
-    addressOrName: address,
-  })
+  const { address } = useAccount()
   return (
     <div className="flex w-1/4 flex-col">
       <h1 className="my-3 font-bold">My Position</h1>
